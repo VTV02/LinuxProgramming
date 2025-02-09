@@ -66,9 +66,9 @@ void* thread_handle2(void* arg) {
 
     for (int i = 0; i < student_list->count; i++) {
         write(fd, student_list->student[i].name, sizeof(student_list->student[i].name));
-        write(fd, "\n", 1);
+        write(fd, "\t", 1);
         write(fd, student_list->student[i].birthday, sizeof(student_list->student[i].birthday));
-        write(fd, "\n", 1);
+        write(fd, "\t", 1);
         write(fd, student_list->student[i].homeTown, sizeof(student_list->student[i].homeTown));
         write(fd, "\n", 1);
     }
