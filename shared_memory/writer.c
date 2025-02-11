@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
         printf("\nWhat message do you want to send(or quit): ");
         fgets(shared_mem->message,256,stdin);
 
-        //delete newline charecter
+        //delete newline character
         shared_mem->message[strcspn(shared_mem->message, "\n")] = 0;
         
         //increase flag to notify that have new data
@@ -72,6 +72,7 @@ int main(int argc, char *argv[])
         }
         
     }
+    //make sure to exit while looping then unlink the memory
     if(shm_unlink(shm_name)==-1)
         {
             perror("\nshm_unlink failed\n");
